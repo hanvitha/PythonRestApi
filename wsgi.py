@@ -3,10 +3,10 @@ from flask_restful import Api
 from Loan import Loan
 
 
-app = Flask(__name__)
-api = Api(app)
+application = Flask(__name__)
+api = Api(application)
 
-@app.route('/')
+@application.route('/')
 def home():
     return render_template('home.html')
 
@@ -14,5 +14,5 @@ def home():
 api.add_resource(Loan, "/<string:name>")
 
 if __name__ == '__main__':
-    app.run()
+    application.run()
 
